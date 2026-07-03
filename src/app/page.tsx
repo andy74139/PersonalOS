@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from "react";
 import { AddTodoForm } from "@/components/AddTodoForm";
+import { AITodoInput } from "@/components/AITodoInput";
 import { FilterBar } from "@/components/FilterBar";
 import { TodoList } from "@/components/TodoList";
 import type { FilterValue, SortValue, Todo } from "@/types";
@@ -61,6 +62,10 @@ export default function Home() {
 
       <div className="space-y-6">
         <AddTodoForm onCreated={fetchTodos} />
+
+        <div className="border-t border-b border-gray-200 py-4">
+          <AITodoInput onChanged={fetchTodos} />
+        </div>
 
         <FilterBar
           filter={filter}
